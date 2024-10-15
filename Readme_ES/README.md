@@ -4,7 +4,7 @@ Este es el primer proyecto del cursus en la escuela 42, su objetivo es crear una
 Se divide en dos partes, funciones réplica de la **libc** *(23)* y otras **funciones adicionales** *(11)*. A esto se le añade una *parte bonus* donde empezaremos a manejar y ver el uso / funcionamiento de **listas enlazadas** *(10)*.
 
  ‎  
- ‎
+  ‎
 Entre estas funciones encontramos que hemos de aprender y manejar:
 
 - **Funciones básicas** ➜
