@@ -2,7 +2,7 @@
 This is the first project of the cursus in school 42, the objective is to create a library with replicated or self-made functions to make use of them in our future projects.
 
 It is divided in two parts, functions replicated from the **libc** *(23)* and other **additional functions** *(11)*. To this is added a *bonus part* where we will start to handle and see the use of **linked lists** *(10)*.
- 
+  
  ‎  
 In these functions we will use and learn from:
 
