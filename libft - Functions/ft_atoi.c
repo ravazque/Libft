@@ -5,38 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ravazque <ravazque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 11:59:02 by ravazque          #+#    #+#             */
-/*   Updated: 2024/09/28 13:21:19 by ravazque         ###   ########.fr       */
+/*   Created: 2024/10/22 21:41:12 by ravazque          #+#    #+#             */
+/*   Updated: 2024/10/22 21:58:35 by ravazque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_ovflow(unsigned long long num, int neg)
+{
+	if (neg == -1 && num > 9223372036854775807)
+		return (0);
+	if (neg == 1 && num > 9223372036854775807)
+		return (-1);
+	return (num);
+}
+
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	num;
-	int	sign;
+	int					i;
+	unsigned long long	num;
+	int					sign;
 
 	i = 0;
 	num = 0;
 	sign = 1;
-	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
 	if (nptr[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	else if (nptr[i] == '+')
-		i++;
+		sign *= -1;
 	if (nptr[i] == '-' || nptr[i] == '+')
-		return (0);
+		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		num = num * 10 + (nptr[i] - 48);
+		num = num * 10 + nptr[i] - 48;
 		i++;
 	}
+	num = ft_ovflow(num, sign);
 	return (num * sign);
 }
